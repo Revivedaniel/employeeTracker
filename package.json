@@ -1,0 +1,24 @@
+{
+  "name": "employeetracker",
+  "version": "1.0.0",
+  "description": "A tool to manage a companies employees",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Revivedaniel/employeeTracker.git"
+  },
+  "author": "Revivedaniel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Revivedaniel/employeeTracker/issues"
+  },
+  "homepage": "https://github.com/Revivedaniel/employeeTracker#readme",
+  "dependencies": {
+    "inquirer": "^8.1.2",
+    "mysql2": "^2.3.0"
+  }
+}
