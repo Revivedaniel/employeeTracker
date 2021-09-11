@@ -1,6 +1,8 @@
 //this will be the index menu
 //inquirer
 const inquirer = require("inquirer");
+//viewAllDepartments
+const viewAllDepartments = require("../lib/viewAllDepartments")
 
 const questions = [
     {
@@ -15,7 +17,7 @@ function indexMenu () {
     inquirer.prompt(questions).then((data) => {
         switch (data.indexChoice) {
             case "View All Departments":
-                console.log("navigated to view all departments")
+                viewAllDepartments();
                 break;
             case "View All Roles":
                 console.log("navigated to View All Roles")
