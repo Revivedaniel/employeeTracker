@@ -3,6 +3,8 @@
 const inquirer = require("inquirer");
 //addDepartmentMenu
 const addDepartmentMenu = require("./addDepartmentMenu");
+//AddRoleMenu
+const addRoleMenu = require("./addRoleMenu");
 //viewAllDepartments
 const viewAllDepartments = require("../lib/viewAllDepartments");
 //viewAllRoles
@@ -35,7 +37,7 @@ function indexMenu () {
                 addDepartmentMenu();
                 break;
             case "Add A Role":
-                console.log("navigated to Add A Role")
+                addRoleMenu();
                 break;
             case "Add An Employee":
                 console.log("navigated to Add An Employee")
