@@ -3,6 +3,8 @@
 const inquirer = require("inquirer");
 //viewAllDepartments
 const viewAllDepartments = require("../lib/viewAllDepartments")
+//viewAllRoles
+const viewAllRoles = require("../lib/viewAllRoles")
 
 const questions = [
     {
@@ -20,7 +22,7 @@ function indexMenu () {
                 viewAllDepartments();
                 break;
             case "View All Roles":
-                console.log("navigated to View All Roles")
+                viewAllRoles();
                 break;
             case "View All Employees":
                 console.log("navigated to View All Employees")
