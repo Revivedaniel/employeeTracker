@@ -2,9 +2,11 @@
 //inquirer
 const inquirer = require("inquirer");
 //viewAllDepartments
-const viewAllDepartments = require("../lib/viewAllDepartments")
+const viewAllDepartments = require("../lib/viewAllDepartments");
 //viewAllRoles
-const viewAllRoles = require("../lib/viewAllRoles")
+const viewAllRoles = require("../lib/viewAllRoles");
+//viewAllEmployees
+const viewAllEmployees = require("../lib/viewAllEmployees");
 
 const questions = [
     {
@@ -25,7 +27,7 @@ function indexMenu () {
                 viewAllRoles();
                 break;
             case "View All Employees":
-                console.log("navigated to View All Employees")
+                viewAllEmployees();
                 break;
             case "Add A Department":
                 console.log("navigated to Add A Department")
