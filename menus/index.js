@@ -1,6 +1,8 @@
 //this will be the index menu
 //inquirer
 const inquirer = require("inquirer");
+//addDepartmentMenu
+const addDepartmentMenu = require("./addDepartmentMenu");
 //viewAllDepartments
 const viewAllDepartments = require("../lib/viewAllDepartments");
 //viewAllRoles
@@ -30,7 +32,7 @@ function indexMenu () {
                 viewAllEmployees();
                 break;
             case "Add A Department":
-                console.log("navigated to Add A Department")
+                addDepartmentMenu();
                 break;
             case "Add A Role":
                 console.log("navigated to Add A Role")
