@@ -42,12 +42,8 @@ function addRoleMenu() {
   });
 
   inquirer.prompt(questions).then((data) => {
-      console.log(currentDepartments)
-      console.log(currentDepartmentIds)
-    const indexMenu = require("../menus/index");
     const role_department_id = currentDepartmentIds[data.roleDepartment]
     addARole(data.roleName, data.roleSalary, role_department_id);
-    indexMenu();
   });
 }
 
