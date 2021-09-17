@@ -13,6 +13,8 @@ const viewAllDepartments = require("../lib/viewAllDepartments");
 const viewAllRoles = require("../lib/viewAllRoles");
 //viewAllEmployees
 const viewAllEmployees = require("../lib/viewAllEmployees");
+//updateRoleMenu
+const updateRoleMenu = require("./updateRoleMenu");
 
 const questions = [
     {
@@ -45,7 +47,7 @@ function indexMenu () {
                 addEmployeeMenu();
                 break;
             case "Update An Employee Role":
-                console.log("navigated to Update An Employee Role")
+                updateRoleMenu();
                 break;
         
             default:
