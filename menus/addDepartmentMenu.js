@@ -17,5 +17,5 @@ function addDepartmentMenu () {
         addADepartment(data.newDepartment);
     })
 };
-
+//exporting the addDepartmentMenu function
 module.exports = addDepartmentMenu;

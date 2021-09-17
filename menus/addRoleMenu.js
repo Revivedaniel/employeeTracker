@@ -26,14 +26,17 @@ const questions = [
 ];
 
 function addRoleMenu() {
-  //db connection
+  //Calling database connection
   const db = require("../config/connection");
+  //pre-written sql statement
   const sql = "SELECT * FROM departments";
+  //using mysql2 to query the database specified in ../config/connections.js
   db.query(sql, (err, results) => {
     if (err) {
       console.log(err);
       return;
     }
+    //itterating through and storing each entry in result
     for (const key in results) {
       const element = results[key];
         currentDepartments.push(element.department_name)
@@ -46,5 +49,5 @@ function addRoleMenu() {
     addARole(data.roleName, data.roleSalary, role_department_id);
   });
 }
-
+//exporting the addRoleMenu function
 module.exports = addRoleMenu;

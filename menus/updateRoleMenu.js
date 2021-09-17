@@ -1,4 +1,5 @@
 const inquirer = require("inquirer");
+//Calling database connection
 const db = require("../config/connection");
 const updateEmployeeRole = require("../lib/updateEmployeeRole");
 async function updateEmployeeRoleMenu() {
@@ -6,26 +7,29 @@ async function updateEmployeeRoleMenu() {
   const currentRoleIds = {};
   const allEmployeeData = {};
   const allEmployeeNames = [];
+  //pre-written sql statements
   const sql = "SELECT * FROM roles";
   const sql2 = "SELECT * FROM employees";
+  //using mysql2 to query the database specified in ../config/connections.js
   db.query(sql, (err, results) => {
     if (err) {
       console.log(err);
       return;
     }
+    //itterating through and storing each entry in result
     for (const key in results) {
       const element = results[key];
       currentRoles.push(element.role_name);
       currentRoleIds[element.role_name] = element.id;
     }
   });
-
+  //using mysql2 to query the database specified in ../config/connections.js
   db.query(sql2, (err, results) => {
     if (err) {
       console.log(err);
       return;
     }
-    
+    //itterating through and storing each entry in result
     for (const key in results) {
       const element = results[key];
       allEmployeeData[`${element.employee_first_name} ${element.employee_last_name}`] = {};
@@ -81,5 +85,5 @@ async function updateEmployeeRoleMenu() {
   
 }, 100)
 }
-
+//exporting the updateEmployeeRoleMenu function
 module.exports = updateEmployeeRoleMenu;

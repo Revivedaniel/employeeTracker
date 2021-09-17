@@ -39,28 +39,31 @@ const questions = [
   ]
 
   function addEmployeeMenu() {
-    //db connection
+    //Calling database connection
     const db = require("../config/connection");
+    //pre-written sql statements
     const sql = "SELECT * FROM departments";
     const sql2 = "SELECT * FROM roles";
-    //Gathering the departement names to use in the prompt as options
+    //using mysql2 to query the database specified in ../config/connections.js
     db.query(sql, (err, results) => {
       if (err) {
         console.log(err);
         return;
       }
+      //itterating through and storing each entry in result
       for (const key in results) {
         const element = results[key];
           currentDepartments.push(element.department_name)
           currentDepartmentIds[element.department_name] = element.id
       }
     });
-    //Gathering the roles to use in the prompt as options
+    //using mysql2 to query the database specified in ../config/connections.js
     db.query(sql2, (err, results) => {
       if (err) {
         console.log(err);
         return;
       }
+      //itterating through and storing each entry in result
       for (const key in results) {
         const element = results[key];
           currentRoles.push(element.role_name)
@@ -89,5 +92,5 @@ const questions = [
       });
     });
   }
-  
+  //exporting the addEmployeeMenu function
   module.exports = addEmployeeMenu;

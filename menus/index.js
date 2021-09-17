@@ -56,5 +56,5 @@ function indexMenu () {
         }
     })
 }
-
+//exporting the indexMenu function
 module.exports = indexMenu
