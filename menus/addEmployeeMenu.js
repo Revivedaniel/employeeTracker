@@ -35,6 +35,11 @@ const questions = [
       name: "role",
       message: "What Role?",
       choices: roles
+    },
+    {
+      type: "input",
+      name: "manager",
+      message: "Who is the Manager?",
     }
   ]
 
@@ -75,10 +80,7 @@ const questions = [
     inquirer.prompt(questions).then((data) => {
       const employee = {};
       employee.departmentId = currentDepartmentIds[data.department];
-      employee.firstName = data.firstName;
-      employee.lastName = data.lastName;
       employee.role = 0;
-      console.log(employee.departmentId)
       for (const key in currentRoleDepartmentIds) {
           const element = currentRoleDepartmentIds[key];
           if (element == employee.departmentId) {
@@ -88,7 +90,7 @@ const questions = [
 
       inquirer.prompt(whatRole).then((roleData) => {
         employee.role = currentRoleDepartmentIds[roleData.role]
-        addAnEmployee(employee.firstName, employee.lastName, employee.role, employee.departmentId);
+        addAnEmployee(data.firstName, data.lastName, employee.role, employee.departmentId, roleData.manager);
       });
     });
   }
