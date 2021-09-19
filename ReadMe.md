@@ -10,7 +10,7 @@
 - [Credits](#credits)
 - [License](#license)
 ## Installation
-To install this project, clone the repository. Next, '$ npm install' the packages and then run '$ node server.js' in the main directory.
+To install this project, clone the repository. Next, '\$ npm install' the packages and then run '\$ node server.js' in the main directory.
 ## Usage
 Anybody is free to use this employee tracker program.
 ## Credits
